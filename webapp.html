@@ -1,0 +1,144 @@
+<style>
+  body {
+    background: linear-gradient(to right, #cfd9df, #e2ebf0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 3rem;
+    color: #222;
+  }
+
+  .card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    max-width: 600px;
+    margin: 2rem auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    background-color: #1e6091;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  button:hover {
+    background-color: #144e75;
+  }
+
+  a {
+    color: #1e6091;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .home-link {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+</style>
+<style>
+  body {
+    background: linear-gradient(to right, #cfd9df, #e2ebf0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 3rem;
+    color: #222;
+  }
+
+  .card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    max-width: 600px;
+    margin: 2rem auto;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button {
+    padding: 1rem 2rem;
+    background-color: #1e6091;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+
+  button:hover {
+    background-color: #144e75;
+  }
+
+  a {
+    color: #1e6091;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: bold;
+  }
+
+  .home-link {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+  <h1>🍴 Recipe Idea Generator</h1>
+  <p>Click the button to get a fun recipe idea!</p>
+
+  <div class="card" id="recipe-card">
+    <h2>Click below to start!</h2>
+  </div>
+
+  <button onclick="generateRecipe()">🎲 Get Recipe</button>
+
+  <a href="scratch.html" class="home-link">← Back to Recipes Page</a>
+  <a href="index.html" class="home-link">← Back to Home</a>
+
+  <script>
+    const recipes = [
+      {
+        name: "BBQ Bacon Burgers 🍔",
+        description: "Juicy beef patties topped with crispy bacon, cheddar, and BBQ sauce. Grill it up and serve hot!"
+      },
+      {
+        name: "Cinnamon Roll Pancakes 🥞",
+        description: "Swirled cinnamon sugar inside pancakes, topped with cream cheese icing—breakfast meets dessert."
+      },
+      {
+        name: "Sheet Pan Chicken & Veggies 🍗",
+        description: "One-pan wonder with roasted chicken, bell peppers, and zucchini. Easy, healthy, and full of flavor."
+      },
+      {
+        name: "No-Bake Oreo Cheesecake 🍰",
+        description: "Crushed Oreos, whipped cream, and cream cheese in a chilled, dreamy dessert—no oven needed!"
+      },
+      {
+        name: "Breakfast Burrito 🌯",
+        description: "Scrambled eggs, sausage, hash browns, and cheese all wrapped in a warm tortilla. Perfect on the go!"
+      }
+    ];
+
+    function generateRecipe() {
+      const recipe = recipes[Math.floor(Math.random() * recipes.length)];
+      document.getElementById('recipe-card').innerHTML = `
+        <h2>${recipe.name}</h2>
+        <p>${recipe.description}</p>
+      `;
+    }
+  </script>
+</body>
+</html>
